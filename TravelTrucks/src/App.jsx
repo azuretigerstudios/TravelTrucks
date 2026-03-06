@@ -1,18 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
-
-// İleride import edeceğimiz sayfalar:
-// import HomePage from './pages/HomePage/HomePage';
-// import CatalogPage from './pages/CatalogPage/CatalogPage';
-// import CamperDetailsPage from './pages/CamperDetailsPage/CamperDetailsPage';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout/Layout';
+import HomePage from './pages/HomePage/HomePage';
+import CatalogPage from './components/CatalogPage/CatalogPage';
+import CamperDetailsPage from './components/CamperDetailsPage/CamperDetailsPage';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<div>Ana Sayfa (HomePage)</div>} />
-      <Route path="/catalog" element={<div>Katalog Sayfası (CatalogPage)</div>} />
-      <Route path="/catalog/:id" element={<div>Detay Sayfası (CamperDetailsPage)</div>} />
-      {/* Yanlış URL girilirse ana sayfaya yönlendir */}
-      <Route path="*" element={<div>Sayfa Bulunamadı</div>} />
+      {/* Tüm sayfaları sarmalayan Layout */}
+      <Route path="/" element={<Layout />}>
+        
+        {/* Layout'un içindeki <Outlet /> kısmına yerleşecek alt sayfalar */}
+        <Route index element={<HomePage />} />
+        <Route path="catalog" element={<CatalogPage />} />
+        <Route path="catalog/:id" element={<CamperDetailsPage />} />
+        
+      </Route>
+
+      {/* Yanlış veya var olmayan bir URL girilirse otomatik olarak Ana Sayfaya yönlendir */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

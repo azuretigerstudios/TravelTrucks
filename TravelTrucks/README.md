@@ -1,16 +1,12 @@
-# React + Vite
+# TravelTrucks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Kısa Açıklama
+TravelTrucks, karavan kiralama hizmeti sunan kurgusal bir şirket için geliştirilmiş modern bir frontend web uygulamasıdır. Kullanıcılar katalog üzerinden çeşitli karavanları inceleyebilir, özelliklerine göre filtreleyebilir, detaylarını ve kullanıcı yorumlarını görüntüleyebilir ve hızlıca rezervasyon formunu doldurabilirler.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Temel Özellikler
+* **Katalog ve Dinamik Filtreleme:** Karavanları lokasyona, araç tipine ve ek özelliklere göre filtreleme (Backend destekli).
+* **Sayfalandırma (Pagination):** "Load More" butonu ile ilanları performanslı bir şekilde sayfa sayfa yükleme.
+* **Favoriler:** Beğenilen karavanları favorilere ekleme (Veriler sayfa yenilense bile `localStorage` ile kalıcı hale getirilir).
+* **Detay Sayfası:** Karavanların teknik detayları, resim galerisi ve kullanıcı yorumlarının bulunduğu sekmeli (tab) yapı.
+* **Rezervasyon Formu:** Kullanıcı dostu ve anında form doğrulama (Formik & Yup) içeren rezervasyon arayüzü.
+* **Modern State Yönetimi:** Redux Toolkit ile merkezi ve optimize edilmiş veri yönetimi.
